@@ -1,15 +1,8 @@
 def solution(s):
-    
-    alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-    length = len(alphabet)
+    alpha_vals = {'a': 26, 'b': 25, 'c': 24, 'd': 23, 'e': 22, 'f': 21, 'g': 20, 'h': 19, 'i': 18, 'j': 17, 'k': 16, 'l': 15, 'm': 14, 'n': 13, 'o': 12, 'p': 11, 'q': 10, 'r': 9, 's': 8, 't': 7, 'u': 6, 'v': 5, 'w': 4, 'x': 3, 'y': 2, 'z': 1}
     total = 0
-    letter_count = 1 
+    for i in range(len(s)):
+        total += alpha_vals[s[i]] * (i + 1)
 
-    for s_letter in s:
-        for letter in alphabet:
-            if s_letter == letter:
-                letter_val = length - alphabet.index(letter)
-                total += letter_val * letter_count
-                letter_count += 1
     print(total)
-solution("azaz")
+solution("zaza")
