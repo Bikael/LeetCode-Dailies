@@ -3,6 +3,8 @@ def longestConsecutive(nums: list[int]) -> int:
         cur_seq = 1
         lcs = 1
 
+        if nums == []:
+                     return 0 
         for num in nums:
             while num + 1 in num_set:
                 cur_seq += 1
