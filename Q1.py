@@ -1,8 +1,7 @@
-def twoSum(self, nums: list[int], target: int) -> list[int]:
-        for i in range(len(nums)):
-            # print(f"printing nums[i]: {nums[i]}")
-            for j in range(i+1,len(nums)):
-                if nums[i] + nums[j] == target:
-                    return [i,j]
-                # print(f"printing nums[j]: {nums[j]}")
+def twoSum( nums: list[int], target: int) -> list[int]:
+    my_map = {}
+    for i in range(len(nums)):
+        if (target - nums[i]) in my_map:
+            return [my_map[target - nums[i]],i]
+        my_map[nums[i]] = i
         
