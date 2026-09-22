@@ -1,3 +1,5 @@
+# had to watch youtube video on how to do this sets are op
+
 def longestConsecutive(nums: list[int]) -> int:
     num_set = set(nums)
     lcs = 1
