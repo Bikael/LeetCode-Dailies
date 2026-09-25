@@ -9,20 +9,15 @@ def countSubstrings( s: str) -> int:
                 right += 1
             else:
                 left += 1
-
             all_sub_palindromes += palindrome_sub_count
-        print(all_sub_palindromes)
         return all_sub_palindromes
     
-def getPalindromeSubstrings( s: str, left : int, right : int) -> int:
-    offset = 0
+def getPalindromeSubstrings( s: str, left : int, right : int) -> list[str]:
     sub_string_count = 0
-    while ((left - offset) >= 0 and (right + offset) < len(s)):
-        if s[left - offset] == s[right + offset]:
-            offset += 1
-            sub_string_count += 1
-        else:
-            return sub_string_count
+    while (left >= 0 and right < len(s) and s[left] == s[right]):
+        sub_string_count += 1
+        left -= 1
+        right += 1
     return sub_string_count
 
 print(countSubstrings("aaa"))
