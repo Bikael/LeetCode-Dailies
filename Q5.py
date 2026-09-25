@@ -27,6 +27,7 @@ def longestPalindrome( s: str) -> str:
         palindrome_sub = getPalindromeSubstring(s,left,right)
         if len(palindrome_sub) > len(longestPalindrome):
             longestPalindrome = palindrome_sub
-    return longestPalindrome
+    return "Boom longest palindrome: " + longestPalindrome
 
-print(longestPalindrome("a"))
+word = input("Enter your string: ")
+print(longestPalindrome(word))
