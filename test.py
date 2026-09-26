@@ -1,3 +1,7 @@
-mr_str = "badad"
+seen = {}
 
-print(mr_str[1:3])
+seen[1] = []
+
+seen[1].append(2)
+seen[1].append(3)
+print(seen)
