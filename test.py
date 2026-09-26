@@ -1,7 +1,14 @@
-seen = {}
+phrase = "catsanddog"
 
-seen[1] = []
+words = ["cat", "and", "dog"]
 
-seen[1].append(2)
-seen[1].append(3)
-print(seen)
+for word in words:
+    if word in phrase:
+        phrase = phrase.replace(word,"")
+
+if len(phrase) > 0:
+    print (False)
+else:
+    print(True)
+
+print(phrase)
