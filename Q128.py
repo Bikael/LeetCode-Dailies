@@ -1,22 +1,21 @@
-# had to watch youtube video on how to do this sets are op
+class Solution:
+    def longestConsecutive(self, nums: List[int]) -> int:
+        nums = set(nums)
+        lc = 1
+        count = 1
 
-def longestConsecutive(nums: list[int]) -> int:
-    num_set = set(nums)
-    lcs = 1
-    cur_seq = 1
+        if not nums:
+            return 0
 
-    if nums == []:
-        return 0
-    
-    for num in num_set:
-        if num + 1 in num_set and num - 1 not in num_set:
-            while num + 1 in num_set:
-                cur_seq += 1
-                num += 1
+        for num in nums:
+            if num + 1 in nums and num - 1 not in nums:
+                while num + 1 in nums:
+                    count += 1
+                    num += 1
+            if count > lc:
+                lc = count
+            count = 1
 
-            if cur_seq >= lcs:
-                lcs = cur_seq
-            cur_seq = 1
-    return lcs
+        return lc
 
-print(longestConsecutive([0,3,7,2,5,8,4,6,0,1]))
+        
