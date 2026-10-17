@@ -17,6 +17,6 @@ class Solution:
                 fleets +=1
 
             
-        # print(fleets)
+
         return fleets
             
